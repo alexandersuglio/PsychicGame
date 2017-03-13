@@ -2,8 +2,9 @@
 /////////////////
 
 
-var wins = 0,
-    losses = 0;
+ var wins = [],
+     losses = [],
+     makeZero = 0;
       // chosenWordBank = [];
 
     $("body").keyup(function(event) {
@@ -22,6 +23,7 @@ var wins = 0,
         var keyPressed = event.key;
 
         if (userResult === computerResult) {
+            // wins === 0;
             wins++;
             $("#wincounter").text(wins);
             alert("You picked " + keyPressed + " You win!");
@@ -29,6 +31,7 @@ var wins = 0,
         };
 
         if (userResult != computerResult) {
+            // losses ===0;
             losses++;
             $("#losscounter").text(losses);
             // alert("You picked " userLetterGuess[userResult] + "The computer picked " + computerLetterGuess[computerResult] + "You Lose!");
@@ -36,10 +39,9 @@ var wins = 0,
 
     });
 
+$("button").click(function() {
+   $("#wincounter").text(makeZero);  
+    $("#losscounter").text(makeZero); 
 
-
-//STILL WORKING ON A WORKING RESET FUNCTION 
-// $("button").click(function() {
-
-// };
+  });
 
